@@ -1,0 +1,9 @@
+{
+  "VCModuleV3": {
+    "blades": {
+      "hello-world": {
+        "title": "Hello world blade"
+      }
+    }
+  }
+}

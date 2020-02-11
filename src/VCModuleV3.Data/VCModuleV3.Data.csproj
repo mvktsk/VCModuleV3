@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VCModuleV3.Core\VCModuleV3.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Caching\" />
+    <Folder Include="ExportImport\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VirtoCommerce.Platform.Data" Version="3.0.0-rc3-0147" />
+  </ItemGroup>
+
+</Project>

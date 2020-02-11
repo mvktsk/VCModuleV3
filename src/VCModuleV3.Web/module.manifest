@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<module>
+    <id>VCModuleV3</id>
+    <version>1.0.0</version>
+    <version-tag>v1</version-tag>
+    <platformVersion>3.0.0</platformVersion>
+
+    <dependencies>
+        <dependency id="VirtoCommerce.Core" version="3.0.0" />
+    </dependencies>
+
+    <title>VCModuleV3</title>
+    <description>Enter your module description here.</description>
+    <authors>
+        <author>Your Name</author>
+    </authors>
+
+    <owners>
+        <owner>Your Company Name</owner>
+    </owners>
+    <groups>
+        <group>samples</group>
+    </groups>
+    <iconUrl></iconUrl>
+
+    <releaseNotes>First version.</releaseNotes>
+    <copyright>Copyright © Your copyright</copyright>
+    <tags>sample</tags>
+
+    <assemblyFile>VCModuleV3.Web.dll</assemblyFile>
+    <moduleType>VCModuleV3.Web.Module, VCModuleV3.Web</moduleType>
+</module>
