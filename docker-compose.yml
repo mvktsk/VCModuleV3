@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  vcmodulev3web:
-    image: ${DOCKER_REGISTRY-}vcmodulev3web
-    build:
-      context: .
-      dockerfile: src/VCModuleV3.Web/Dockerfile
