@@ -1,15 +1,15 @@
 const glob = require("glob");
 const path = require("path");
-const webpack = require("webpack");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, 'dist');
 
 function getEntrypoints() {
     const result = [
         ...glob.sync('./Scripts/**/*.js', { nosort: true }),
-        ...glob.sync('./Content/css/*.css', { nosort: true })
+        ...glob.sync('./Content/**/*.css', { nosort: true })
     ];
 
     return result;

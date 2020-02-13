@@ -1,0 +1,23 @@
+version: '3.6'
+
+services:
+  vc-db:
+    image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
+    ports:
+      - "${DOCKER_SQL_PORT:-1433}:1433"
+    expose:  
+      - 1433  
+    environment: 
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+      - SA_PASSWORD=v!rto_Labs!
+
+  vcmodulev3.web:
+    image: ${DOCKER_REGISTRY-}vcmodulev3web
+    build:
+      context: .
+      dockerfile: src/VCModuleV3.Web/Dockerfile
+    ports:
+      - "${DOCKER_PLATFORM_PORT:-8091}:443"
+    depends_on:
+      - vc-db
