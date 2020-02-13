@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCModuleV3.Web", "src\VCMod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCModuleV3.Test", "test\VCModuleV3.Test\VCModuleV3.Test.csproj", "{57470098-FF99-49D0-93C9-90C9217E8133}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{42FE132B-DB97-488A-B426-2F31A2D153BD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +37,6 @@ Global
 		{57470098-FF99-49D0-93C9-90C9217E8133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57470098-FF99-49D0-93C9-90C9217E8133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57470098-FF99-49D0-93C9-90C9217E8133}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42FE132B-DB97-488A-B426-2F31A2D153BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42FE132B-DB97-488A-B426-2F31A2D153BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42FE132B-DB97-488A-B426-2F31A2D153BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42FE132B-DB97-488A-B426-2F31A2D153BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
