@@ -4,10 +4,13 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster
 RUN apt-get update
 RUN apt-get -yq install wget \
-    && apt-get -yq install unzip
+    && apt-get -yq install unzip\
+    && apt-get -yq install npm
 RUN wget -q "https://github.com/VirtoCommerce/vc-platform/releases/download/3.0.0-rc.3/VirtoCommerce.Platform.3.0.0-rc.3.1.zip" \
     && unzip -q VirtoCommerce.Platform.3.0.0-rc.3.1.zip -d vc-platform-3 \
     && rm VirtoCommerce.Platform.3.0.0-rc.3.1.zip
+RUN dotnet tool install VirtoCommerce.GlobalTool -g --version 3.0.0-beta0006
+RUN export PATH="$PATH:/root/.dotnet/tools"
 
 #FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
@@ -18,6 +21,7 @@ RUN dotnet restore "src/VCModuleV3.Web/VCModuleV3.Web.csproj"
 COPY . .
 #WORKDIR "/src"
 RUN dotnet build "src/VCModuleV3.Web/VCModuleV3.Web.csproj" -c Release -o /app/build
+RUN vc-build WebPackBuild
 
 RUN mkdir -p /vc-platform-3/Modules/VCModuleV3
 
