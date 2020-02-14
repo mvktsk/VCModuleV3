@@ -16,6 +16,6 @@ services:
     image: ${DOCKER_REGISTRY-}vcmodulev3web
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: src/VCModuleV3.Web/Dockerfile
     depends_on:
       - vc-db
