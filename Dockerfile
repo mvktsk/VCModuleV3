@@ -11,21 +11,5 @@ RUN mkdir /vc-platform-3/Modules
 RUN ln -s /app /vc-platform-3/Modules/VCModuleV3
 EXPOSE 80
 EXPOSE 443
-
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
-WORKDIR /src
-COPY ["src/VCModuleV3.Web/VCModuleV3.Web.csproj", "src/VCModuleV3.Web/"]
-COPY ["src/VCModuleV3.Core/VCModuleV3.Core.csproj", "src/VCModuleV3.Core/"]
-COPY ["src/VCModuleV3.Data/VCModuleV3.Data.csproj", "src/VCModuleV3.Data/"]
-RUN dotnet restore "src/VCModuleV3.Web/VCModuleV3.Web.csproj"
-COPY . .
-WORKDIR "/src/src/VCModuleV3.Web"
-RUN dotnet build "VCModuleV3.Web.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "VCModuleV3.Web.csproj" -c Release -o /app/publish
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "VCModuleV3.Web.dll"]
+WORKDIR /vc-platform-3/
+#ENTRYPOINT ["dotnet", "VirtoCommerce.Platform.Web.dll"]

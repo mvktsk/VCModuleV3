@@ -9,3 +9,4 @@ services:
       com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  \"VirtoCommerce.Platform.Web.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/vc-platform-3"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    entrypoint: dotnet VirtoCommerce.Platform.Web.dll
